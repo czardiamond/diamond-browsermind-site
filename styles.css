@@ -113,3 +113,11 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
 */
+
+
+/* Motion refresh: calm voice-wave/listening states */
+@keyframes mind-breathe{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+@keyframes mind-wave{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+@keyframes mind-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.heading-dot,.mic:focus-visible{animation:mind-breathe 2.8s ease-in-out infinite}.mic[aria-pressed=true],.mic.listening{animation:mind-breathe 1.2s ease-in-out infinite;box-shadow:0 0 0 7px #8d9d7730}.voice-row:before,.voice-row:after{content:'';display:block;width:3px;height:14px;border-radius:3px;background:currentColor;transform-origin:center;animation:mind-wave 1.1s ease-in-out infinite}.voice-row:after{animation-delay:.25s}.panel,.intro{animation:mind-enter .7s cubic-bezier(.2,.7,.25,1) both}.browser-panel{animation-delay:.1s}.suggestions button,.primary{transition:transform .2s ease,box-shadow .2s ease}.suggestions button:hover,.primary:hover{transform:translateY(-2px);box-shadow:0 8px 18px #25302720}
+@media(prefers-reduced-motion:reduce){.heading-dot,.mic,.mic.listening,.voice-row:before,.voice-row:after,.panel,.intro{animation:none!important}.suggestions button,.primary{transition:none}}
